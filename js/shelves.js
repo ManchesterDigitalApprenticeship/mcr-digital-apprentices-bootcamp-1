@@ -4,14 +4,14 @@ var Shelves = function(){
 
         this.callbacks = [];
 
-        this.items = [ { id: 1, name: 'Apples', price :1.75},
-            { id: 2, name: 'Milk', price : 0.95},
-            { id: 3, name: 'Bread', price :0.89},
-            { id: 4, name: 'Cheese', price :2.89},
-            { id: 5, name: 'Oranges', price :1.99},
-            { id: 6, name: 'Cucumber', price :0.99},
-            { id: 7, name: 'Chicken', price :3.49},
-            { id: 8, name: 'Cake', price :3.99}
+        this.items = [ { id: 1, name: 'Apples', price :175},
+            { id: 2, name: 'Milk', price : 95},
+            { id: 3, name: 'Bread', price :89},
+            { id: 4, name: 'Cheese', price :289},
+            { id: 5, name: 'Oranges', price :199},
+            { id: 6, name: 'Cucumber', price :99},
+            { id: 7, name: 'Chicken', price :349},
+            { id: 8, name: 'Cake', price :399}
         ];
 
     };
@@ -58,10 +58,11 @@ var ShelfItem = function(cart) {
     var ShelfItem = function(product, cart){
         this.product = product;
         this.cart = cart;
-        this.template = _.template('<li class="list-group-item"><div><span><%= name%></span> <span class="pull-md-right"> £<%= price%></span></div></li>');
+        this.template = _.template('<li class="list-group-item"><div><span><%= name%></span> <span class="pull-right"> £<%= price%></span></div></li>');
         this.render = function() {
-            return $(this.template(this.product)).click(function(){
-                 this.cart.addProduct(this.product.name);
+            return $(this.template({ name:this.product.name, price: (this.product.price/100).toFixed(2) }))
+                .click(function(){
+                 this.cart.addProduct(this.product);
             }.bind(this));
 
         }

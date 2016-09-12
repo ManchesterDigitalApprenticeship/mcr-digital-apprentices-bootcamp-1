@@ -1,13 +1,16 @@
 var CartView = function () {
     var CartView = function CartView(cart, el) {
         this.cart = cart;
-        this.data = [];
+        this.data = {};
         this.$el = $(el);
-        this.template = '<div><ul class="list-group" id="cart-items"></ul></div>'
+        this.template = _.template('<div><ul class="list-group" id="cart-items"></ul></div>');
 
         this.render = function () {
-            var list = this.data.map(function(item){return new CartItem(item).render()});
-            this.$el.html($('#cart-items', this.template).html(list));
+            var list = _.entries(this.data).map(function (item) {
+                return new CartItem(item[0], item[1], cart).render();
+            });
+
+            this.$el.html( $('#cart-items', this.template({})).html(list));
         }
 
         this.cart.registerListener(this.update.bind(this));
@@ -22,11 +25,21 @@ var CartView = function () {
 
 }();
 
-var CartItem = function() {
+var CartItem = function () {
 
-    var CartItem = function(name) {
-        this.render = function() {
-            return $('<li/>', {text: name, class: 'list-group-item'});
+    var CartItem = function (id, product, cart) {
+        this.id = id;
+        this.product = product;
+        this.cart = cart;
+        this.template = _.template('<li class="list-group-item"><span><%=name%></span><span id="remove" class="pull-right glyphicon glyphicon-remove"></span></li>');
+
+        this.render = function () {
+            $el = $(this.template(product));
+            $('#remove', $el).click(function(){
+                this.cart.removeItem(this.id);
+                console.log( "Remove item with cart id " + this.id);
+            }.bind(this));
+            return $el;
         }
     };
 
@@ -41,12 +54,12 @@ var TotalView = function () {
         this.$el = $(el);
         this.cart = cart;
         this.totalItems = 0;
-        this.template = '<div>Total items: <span id="total-items"></span></div>'
+        this.totalPrice = 0;
+        this.template = _.template('<div><span>Total items: <%=totalItems%></span><span class="pull-right">£ <%=totalPrice%></span></div>');
 
         this.render = function () {
-            var $template = $(this.template);
-            $('#total-items', $template).html(this.totalItems);
-            this.$el.html( $template.html() );
+            var rendered = this.template({totalItems: this.totalItems, totalPrice: (this.totalPrice/100).toFixed(2)});
+            this.$el.html(rendered);
         }
 
         this.cart.registerListener(this.update.bind(this));
@@ -54,6 +67,7 @@ var TotalView = function () {
 
     TotalView.prototype.update = function () {
         this.totalItems = this.cart.getTotalItems();
+        this.totalPrice = this.cart.getTotalPrice();
         this.render();
     };
 
@@ -65,8 +79,9 @@ var Cart = function () {
 
     function Cart() {
 
-        this.cartItems = [];
+        this.cartItems = {};
         this.callbacks = [];
+        this.counter = 0;
 
         this.emitChange = function () {
             this.callbacks.forEach(function (callback) {
@@ -84,14 +99,23 @@ var Cart = function () {
     };
 
     Cart.prototype.addProduct = function (item) {
-        this.cartItems = this.cartItems.concat([item]);
+        this.cartItems[this.counter++] = item;
         this.emitChange();
+    };
+
+    Cart.prototype.removeItem = function(id) {
+        this.cartItems = _.omit(this.cartItems, [id]);
+        this.emitChange();
+    };
+
+    Cart.prototype.getTotalPrice = function() {
+        return _.values(this.cartItems).reduce(function(val,item){ return val + item.price }, 0);
     };
 
     Cart.prototype.registerListener = function (callback) {
         this.callbacks = this.callbacks.concat([callback], this.callbacks);
     };
-    
+
     return Cart;
 }();
 
