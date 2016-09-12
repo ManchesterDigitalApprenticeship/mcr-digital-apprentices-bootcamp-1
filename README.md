@@ -16,11 +16,11 @@ writing and thinks ahead to the next step of development.
 
 ### Pairing tips
 
-Communication is important when pairing, keep talking to each other and sharing ideas. 
+Communication is important when pairing, keep talking and focus together on the task at hand. 
 
 Drivers should explain what they are doing to their partner whilst they are typing. 
 
-Navigators shouldn't be silent, but beware of becoming a back-seat driver; allow the driver time to correct typos and 
+Navigators aren't passengers, you shouldn't be silent, but beware of becoming a back-seat driver; allow the driver time to correct typos and 
 mistakes whilst you focus on the structure of the code that you're both writing. 
 
 Talk about your ideas, assumptions and what you want to do. Ask questions when you're unsure.
