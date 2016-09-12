@@ -36,7 +36,7 @@ var CartItem = function () {
         this.render = function () {
             $el = $(this.template(product));
             $('#remove', $el).click(function(){
-                this.cart.removeItem(this.id);
+                this.cart.removeProduct(this.id);
                 console.log( "Remove item with cart id " + this.id);
             }.bind(this));
             return $el;

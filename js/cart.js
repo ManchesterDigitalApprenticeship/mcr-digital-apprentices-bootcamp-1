@@ -1,3 +1,17 @@
+/**
+ *
+ * 
+ *
+ * In this exercise, implement as many as you can of the following requirements for the shopping cart:
+ *
+     * Adding a product to the cart increases the total number of items in the cart by 1
+     * Adding a product to the cart increases the total price of the cart by the product's price
+     * Adding a product to the cart adds the product to the list of items in the cart
+     * Removing a product from the cart decreases the total number of items in the cart by 1
+     * Removing a product from the cart decreases the total price of the cart by the product's price
+     * Removing a product from the cart removes the product from the list of items in the cart
+ */
+
 var Cart = function () {
 
     function Cart() {
@@ -13,26 +27,29 @@ var Cart = function () {
         }
     }
 
+    // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return this.cartItems;
+        return [];
     };
-
+    
+    // Returns the total number of items in the cart
     Cart.prototype.getTotalItems = function () {
-        return this.cartItems.length;
+        return 0;
     };
 
+    // Adds a product to the cart
     Cart.prototype.addProduct = function (item) {
-        this.cartItems[this.counter++] = item;
-        this.emitChange();
+        this.emitChange(); // tell UI components that cart contents have been updated
+    };
+    
+    // Removes a product from the cart; supplied as the 'id' of the item to be removed
+    Cart.prototype.removeProduct = function(id) {
+        this.emitChange(); // tell UI components that cart contents have been updated
     };
 
-    Cart.prototype.removeItem = function(id) {
-        this.cartItems = _.omit(this.cartItems, [id]);
-        this.emitChange();
-    };
-
+    // Returns the total price of items in the cart
     Cart.prototype.getTotalPrice = function() {
-        return _.values(this.cartItems).reduce(function(val,item){ return val + item.price }, 0);
+        return 0;
     };
 
     Cart.prototype.registerListener = function (callback) {
