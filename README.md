@@ -6,9 +6,26 @@
 
 Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and writing user stories. 
  
-In this exercise we'll be focussing on pairing.
+In kata one, we'll be focussing on pairing.
 
-// TODO: what pairing is, driver and navigator, tips
+Pairing, or pair programming, is a collaborative approach to writing software. Two developers work on the same machine 
+to write a piece of software. One takes the role of the 'driver', and the other the 'navigator'. The driver types at the 
+keyboard and it is their responsibility is to implement the code. The navigator reviews the code that the driver is 
+writing and thinks ahead to the next step of development.
+
+
+### Pairing tips
+
+Communication is important when pairing, keep talking to each other and sharing ideas. 
+
+Drivers should explain what they are doing to their partner whilst they are typing. 
+
+Navigators shouldn't be silent, but beware of becoming a back-seat driver; allow the driver time to correct typos and 
+mistakes whilst you focus on the structure of the code that you're both writing. 
+
+Talk about your ideas, assumptions and what you want to do. Ask questions when you're unsure.
+  
+Switch roles frequently, change roles at least every time a feature is complete, but feel free to swap at any time.
 
 ## Running the example
 
