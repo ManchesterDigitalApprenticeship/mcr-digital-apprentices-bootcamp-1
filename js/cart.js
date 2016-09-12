@@ -65,7 +65,7 @@ var Cart = function () {
 
     function Cart() {
 
-        this.cartItems = ['hello'];
+        this.cartItems = [];
         this.callbacks = [];
 
         this.emitChange = function () {
@@ -83,7 +83,7 @@ var Cart = function () {
         return this.cartItems.length;
     };
 
-    Cart.prototype.addItem = function (item) {
+    Cart.prototype.addProduct = function (item) {
         this.cartItems = this.cartItems.concat([item]);
         this.emitChange();
     };
@@ -91,7 +91,8 @@ var Cart = function () {
     Cart.prototype.registerListener = function (callback) {
         this.callbacks = this.callbacks.concat([callback], this.callbacks);
     };
-
-
+    
     return Cart;
 }();
+
+

@@ -12,6 +12,10 @@
     </div>
     <div class="row">
         <div class="col-md-6">
+            <div>Products available (click to add):</div>
+            <div id="shelf"></div>
+        </div>
+        <div class="col-md-6">
             <div id="total-items"></div>
             <div id="cart-content">
             </div>
@@ -20,16 +24,21 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+<script src="js/lodash.min.js"></script>
 <script src="js/cart.js"></script>
+<script src="js/shelves.js"></script>
 <script>
-    var cart, cartView;
+    var cart;
     $(document).ready(
             function () {
                 cart = new Cart();
+                shelves = new Shelves();
                 totalView = new TotalView(cart, '#total-items');
                 cartView = new CartView(cart, '#cart-content');
+                shelfView = new ShelfView(shelves, '#shelf', cart);
                 totalView.update();
                 cartView.update();
+                shelfView.update();
             }
     );
 </script>
