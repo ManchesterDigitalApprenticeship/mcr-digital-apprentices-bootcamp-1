@@ -25,7 +25,7 @@ mistakes whilst you focus on the structure of the code that you're both writing.
 
 Talk about your ideas, assumptions and what you want to do. Ask questions when you're unsure.
   
-Switch roles frequently, change roles at least every time a feature is complete, but feel free to swap at any time.
+Switch roles frequently, at least every time a feature is complete, but feel free to swap at any time.
 
 ## Running the example
 
