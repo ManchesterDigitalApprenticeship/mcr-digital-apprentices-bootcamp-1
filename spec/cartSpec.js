@@ -1,23 +1,5 @@
 describe("Cart", function () {
 
-    var customMatchers =  {
-        toContainProduct : function () {
-            return {
-                compare: function (cart, product) {
-                    var items = cart.getAllItems();
-                    var someMatch =  Object.keys(items).some(function (key) {
-                        return items[key].product.name === product.name && items[key].product.price === product.price;
-                    });
-                    return { pass: someMatch };
-                }
-            }
-        }
-    };
-
-    beforeEach(function () {
-        jasmine.addMatchers(customMatchers);
-    });
-
     it("should be empty when created", function () {
         var cart = new Cart();
         expect(cart.getTotalItems()).toBe(0);
@@ -46,7 +28,16 @@ describe("Cart", function () {
         var cart = new Cart();
         cart.addProduct({name: "widget", price: 450});
         cart.addProduct({name: "thingumabob", price: 125});
-        expect(cart).toContainProduct({name: "widget", price: 450});
-        expect(cart).toContainProduct({name: "thingumabob", price: 125});
+        expect(cart.getAllItems()).toContain({name: "widget", price: 450});
+        expect(cart.getAllItems()).toContain({name: "thingumabob", price: 125});
+    });
+    
+    it("should remove an item at the specified index", function(){
+        var cart = new Cart();
+        cart.addProduct({name: "widget", price: 450});
+        cart.addProduct({name: "whatnot", price: 120});
+        expect(cart.getTotalItems()).toBe(1);
+        expect(cart.getTotalPrice()).toBe(120);
+        expect(cart.getAllItems()).toContain({name: "whatnot", price:120});
     });
 });
