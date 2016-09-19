@@ -6,8 +6,8 @@ var CartView = function () {
         this.template = _.template('<div><ul class="list-group" id="cart-items"></ul></div>');
 
         this.render = function () {
-            var list = _.entries(this.data).map(function (item) {
-                return new CartItem(item[0], item[1], cart).render();
+            var list = _.entries(this.data).map(function (item, index) {
+                return new CartItem(index, item[1], cart).render();
             });
 
             this.$el.html( $('#cart-items', this.template({})).html(list));
@@ -37,7 +37,7 @@ var CartItem = function () {
             $el = $(this.template(product));
             $('#remove', $el).click(function(){
                 this.cart.removeProduct(this.id);
-                console.log( "Remove item with cart id " + this.id);
+                console.log( "Remove item with cart index " + this.id);
             }.bind(this));
             return $el;
         }

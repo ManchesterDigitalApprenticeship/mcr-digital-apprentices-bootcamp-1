@@ -16,7 +16,7 @@ var Cart = function () {
 
     function Cart() {
 
-        this.cartItems = {};
+        this.cartItems = [];
         this.callbacks = [];
         this.counter = 0;
 
@@ -29,7 +29,7 @@ var Cart = function () {
 
     // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return [];
+        return this.cartItems;
     };
     
     // Returns the total number of items in the cart

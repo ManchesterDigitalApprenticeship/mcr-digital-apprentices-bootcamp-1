@@ -2,7 +2,7 @@
 
 // TODO: something about the bootcamp
 
-## Kata One, shopping cart 
+## Kata Two, shopping cart 
 
 Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and writing user stories. 
  
@@ -48,8 +48,14 @@ In this exercise, implement as many as you can of the following requirements for
 ### Adding an item to an array in javascript
 
 ```
+
+// add something to the front of an array:
+
 var array = [];
 array.push('widget'); // array = ['widget']
+
+// or, to add arrays together:
+
 var new_array = array.concat( 'a thing' ); // new_ar = ['widget', 'a thing']
 ```
 
