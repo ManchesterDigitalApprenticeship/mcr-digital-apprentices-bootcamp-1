@@ -29,12 +29,12 @@ var Cart = function () {
 
     // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return this.cartItems;
+        return [];
     };
     
     // Returns the total number of items in the cart
     Cart.prototype.getTotalItems = function () {
-        return 0;
+        return null;
     };
 
     // Adds a product to the cart
