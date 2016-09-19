@@ -29,7 +29,7 @@ var Cart = function () {
 
     // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return [];
+        return null;
     };
     
     // Returns the total number of items in the cart
@@ -49,7 +49,7 @@ var Cart = function () {
 
     // Returns the total price of items in the cart
     Cart.prototype.getTotalPrice = function() {
-        return 0;
+        return null;
     };
 
     Cart.prototype.registerListener = function (callback) {
