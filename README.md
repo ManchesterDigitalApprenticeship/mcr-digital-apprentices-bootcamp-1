@@ -2,35 +2,28 @@
 
 // TODO: something about the bootcamp
 
-## Kata One, shopping cart 
+## Kata Two, shopping cart 
 
-Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and writing user stories. 
+Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing 
+and writing user stories. 
  
-In kata one, we'll be focussing on pairing.
+In kata two, we'll be focussing on automated testing.
 
-Pairing, or pair programming, is a collaborative approach to writing software. Two developers work on the same machine 
-to write a piece of software. One takes the role of the 'driver', and the other the 'navigator'. The driver types at the 
-keyboard and it is their responsibility is to implement the code. The navigator reviews the code that the driver is 
-writing and thinks ahead to the next step of development.
-
-
-### Pairing tips
-
-Communication is important when pairing, keep talking and focus together on the task at hand. 
-
-Drivers should explain what they are doing to their partner whilst they are typing. 
-
-Navigators aren't passengers, you shouldn't be silent, but beware of becoming a back-seat driver; allow the driver time to correct typos and 
-mistakes whilst you focus on the structure of the code that you're both writing. 
-
-Talk about your ideas, assumptions and what you want to do. Ask questions when you're unsure.
-  
-Switch roles frequently, at least every time a feature is complete, but feel free to swap at any time.
+In the previous exercise, we tested our changes by hand, clicking on elements in a UI and checking to see if our 
+changes had the desired effect. For a small system, this is feasible, but as systems grow larger the overhead of 
+performing this sort of check is overwhelming. It takes longer to run the tests, and the number of manual tests we need
+ to run in order to make sure that a new change doesn't break any existing functionality keeps growing. 
+ 
+To escape this trap, we write automated tests; code that tests our code is still doing what it needs to. In this kata, 
+we've got a set of tests which describe how we want the shopping cart to behave, and we need to write code to pass all 
+of the tests. Every time we make a change to our shopping cart, we can re-run the tests to check that our change has done
+ what it needs to, and that we haven't done something which breaks the code we've already written.
 
 ## Running the example
 
-Open the file `index.html` in a browser. The shopping cart interface should be displayed. Use this interface to test 
-the changes which you make to the shopping cart code in `cart.js`.
+Open the file `specRunner.html` in a browser. Instead of the shopping cart interface, you'll see a page showing the 
+results of running a series of tests on the code in `src/cart.js`. Refreshing this page will re-run the tests, or 
+clicking on the links for all tests or an individual one will rerun the test selected. 
 
 ## Coding objectives
 
