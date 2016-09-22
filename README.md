@@ -35,6 +35,8 @@ In this exercise, implement as many as you can of the following requirements for
  * Removing a product from the cart decreases the total number of items in the cart by 1
  * Removing a product from the cart decreases the total price of the cart by the product's price
  * Removing a product from the cart removes the product from the list of items in the cart
+ * Some items in the cart are available as a 'buy one, get one free' offer. When a customer has two such items in their cart, 
+    they should only be charged for one of them.
 
 ## Javascript crib sheet
 
