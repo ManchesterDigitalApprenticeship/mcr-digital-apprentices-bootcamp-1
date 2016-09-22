@@ -18,7 +18,6 @@ var Cart = function () {
 
         this.cartItems = [];
         this.callbacks = [];
-        this.counter = 0;
 
         this.emitChange = function () {
             this.callbacks.forEach(function (callback) {
