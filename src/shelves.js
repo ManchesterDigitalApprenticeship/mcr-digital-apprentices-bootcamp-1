@@ -5,14 +5,14 @@ var Shelves = function(){
         this.callbacks = [];
 
         this.items = [
-            { name: 'Apples', price :175},
+            { name: 'Apples', price :175, bogoff: true},
             { name: 'Milk', price : 95},
             { name: 'Bread', price :89},
             { name: 'Cheese', price :289},
-            { name: 'Oranges', price :199},
+            { name: 'Oranges', price :199, bogoff: true},
             { name: 'Cucumber', price :99},
             { name: 'Chicken', price :349},
-            { name: 'Cake', price :399}
+            { name: 'Cake', price :399, bogoff: true}
         ];
 
     };
