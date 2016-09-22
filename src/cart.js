@@ -16,7 +16,7 @@ var Cart = function () {
 
     function Cart() {
 
-        this.cartItems = [];
+        this.cartItems = {};
         this.callbacks = [];
         this.counter = 0;
 
@@ -29,12 +29,12 @@ var Cart = function () {
 
     // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return null;
+        return [];
     };
     
     // Returns the total number of items in the cart
     Cart.prototype.getTotalItems = function () {
-        return null;
+        return 0;
     };
 
     // Adds a product to the cart
@@ -49,7 +49,7 @@ var Cart = function () {
 
     // Returns the total price of items in the cart
     Cart.prototype.getTotalPrice = function() {
-        return null;
+        return 0;
     };
 
     Cart.prototype.registerListener = function (callback) {
