@@ -36,8 +36,9 @@ describe("Cart", function () {
         var cart = new Cart();
         cart.addProduct({name: "widget", price: 450});
         cart.addProduct({name: "whatnot", price: 120});
+        cart.removeProduct(0);
+        expect(cart.getAllItems()).toContain({name: "whatnot", price:120});
         expect(cart.getTotalItems()).toBe(1);
         expect(cart.getTotalPrice()).toBe(120);
-        expect(cart.getAllItems()).toContain({name: "whatnot", price:120});
     });
 });
