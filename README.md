@@ -17,6 +17,9 @@ shifting our focus from the problem at hand and complicating our code with featu
 
 ## Running the example
 
+Open the file `specRunner.html` in a browser. Instead of the shopping cart interface, you'll see a page showing the 
+results of running a series of tests on the code in `src/cart.js`. Refreshing this page will re-run the tests, or 
+clicking on the links for all tests or an individual one will rerun the test selected. 
 
 ## Coding objectives
 
@@ -28,6 +31,13 @@ In this exercise, implement as many as you can of the following requirements for
  * Removing a product from the cart decreases the total number of items in the cart by 1
  * Removing a product from the cart decreases the total price of the cart by the product's price
  * Removing a product from the cart removes the product from the list of items in the cart
+ * Some items in the cart are available as a 'buy one, get one free' offer. When a customer has two such items in their cart, 
+   they should only be charged for one of them.
+
+## Spec crib sheet
+
+
+
 
 ## Javascript crib sheet
 
