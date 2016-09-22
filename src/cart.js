@@ -16,9 +16,8 @@ var Cart = function () {
 
     function Cart() {
 
-        this.cartItems = {};
+        this.cartItems = [];
         this.callbacks = [];
-        this.counter = 0;
 
         this.emitChange = function () {
             this.callbacks.forEach(function (callback) {
@@ -29,27 +28,31 @@ var Cart = function () {
 
     // Returns a list of items in the cart
     Cart.prototype.getAllItems = function () {
-        return null;
+        return this.cartItems;
     };
     
     // Returns the total number of items in the cart
     Cart.prototype.getTotalItems = function () {
-        return null;
+        return this.cartItems.length;
     };
 
     // Adds a product to the cart
     Cart.prototype.addProduct = function (item) {
+        this.cartItems.push(item);
         this.emitChange(); // tell UI components that cart contents have been updated
     };
     
     // Removes a product from the cart; supplied as the 'id' of the item to be removed
     Cart.prototype.removeProduct = function(id) {
+        this.cartItems.splice(id,1);
         this.emitChange(); // tell UI components that cart contents have been updated
     };
 
     // Returns the total price of items in the cart
     Cart.prototype.getTotalPrice = function() {
-        return null;
+        return this.cartItems.reduce(function(subTotal, item) {
+            return subTotal + item.price
+        }, 0);
     };
 
     Cart.prototype.registerListener = function (callback) {
