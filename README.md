@@ -4,33 +4,19 @@
 
 ## Kata One, shopping cart 
 
-Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and writing user stories. 
+Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and 
+writing user stories. 
  
-In kata one, we'll be focussing on pairing.
+In kata three, we'll be focussing on testing.
 
-Pairing, or pair programming, is a collaborative approach to writing software. Two developers work on the same machine 
-to write a piece of software. One takes the role of the 'driver', and the other the 'navigator'. The driver types at the 
-keyboard and it is their responsibility is to implement the code. The navigator reviews the code that the driver is 
-writing and thinks ahead to the next step of development.
+In the previous exercise, we wrote code to pass a series of predefined tests. As our problems get larger, though, writing
+tests to cover all of the scenarios we cn imagine becomes difficult. Trying to cover everything can also be distracting, 
+shifting our focus from the problem at hand and complicating our code with features we're not actually working on at the time.
 
 
-### Pairing tips
-
-Communication is important when pairing, keep talking and focus together on the task at hand. 
-
-Drivers should explain what they are doing to their partner whilst they are typing. 
-
-Navigators aren't passengers, you shouldn't be silent, but beware of becoming a back-seat driver; allow the driver time to correct typos and 
-mistakes whilst you focus on the structure of the code that you're both writing. 
-
-Talk about your ideas, assumptions and what you want to do. Ask questions when you're unsure.
-  
-Switch roles frequently, at least every time a feature is complete, but feel free to swap at any time.
 
 ## Running the example
 
-Open the file `index.html` in a browser. The shopping cart interface should be displayed. Use this interface to test 
-the changes which you make to the shopping cart code in `cart.js`.
 
 ## Coding objectives
 
