@@ -1,7 +1,5 @@
 # Manchester Digital Apprenticeship Bootcamp One
 
-// TODO: something about the bootcamp
-
 ## Kata Two, shopping cart 
 
 Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing 
