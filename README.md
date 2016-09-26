@@ -40,14 +40,15 @@ In this exercise, implement as many as you can of the following requirements for
 
 describe( "The feature we're testing", function() {    // provide a description of the feature that your're testing
 
-    var thing = new MyObject();                        // set up the thing you're testing, this may involve setting some
-                                                       // properties
+    it( "should do something useful", function() {     // describe what this test is doing
+         var thing = new MyObject();                        // set up the thing you're testing, this may involve setting some
+                                                            // properties
     
-    thing.doSomething();                               // do the thing you want to test
+         thing.doSomething();                               // do the thing you want to test
     
-    expect( thing.getSomeProperty() ).toBe("aString");   // check that the thing is in the state you expected it to be
-    expect( thing.getSomeListProperty() ).toContain("SomeValue");  // you can check inside lists, too
-    
+         expect( thing.getSomeProperty() ).toBe("aString");   // check that the thing is in the state you expected it to be
+         expect( thing.getSomeListProperty() ).toContain("SomeValue");  // you can check inside lists, too
+    });
 });
 
 
