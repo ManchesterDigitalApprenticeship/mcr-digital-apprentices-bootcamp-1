@@ -11,15 +11,17 @@ In kata three, we'll be focussing on testing.
 
 In the previous exercise, we wrote code to pass a series of predefined tests. As our problems get larger, though, writing
 tests to cover all of the scenarios we cn imagine becomes difficult. Trying to cover everything can also be distracting, 
-shifting our focus from the problem at hand and complicating our code with features we're not actually working on at the time.
-
+shifting our focus from the problem at hand and complicating our code with features we're not actually working on at 
+the time. In practice, instead of trying to deal with all of this complexity at once, we write our tests and code one feature
+at a time, choosing a feature, writing a test for it, and then implementing as little code as possible to have our test
+pass at each stage. After passing our test, we re-run all of our previous tests to ensure that we've not broken anything
+already written.
 
 
 ## Running the example
 
-Open the file `specRunner.html` in a browser. Instead of the shopping cart interface, you'll see a page showing the 
-results of running a series of tests on the code in `src/cart.js`. Refreshing this page will re-run the tests, or 
-clicking on the links for all tests or an individual one will rerun the test selected. 
+Open the file `specRunner.html` in a browser. This time, there are no tests present in the file `spec/cartSpec.js`, and 
+we have to add them, then modify code in `src/cart.js` to have them pass. 
 
 ## Coding objectives
 
@@ -36,7 +38,23 @@ In this exercise, implement as many as you can of the following requirements for
 
 ## Spec crib sheet
 
+```
 
+describe( "The feature we're testing", function() {    // provide a description of the feature that your're testing
+
+    var thing = new MyObject();                        // set up the thing you're testing, this may involve setting some
+                                                       // properties
+    
+    thing.doSomething();                               // do the thing you want to test
+    
+    expect( thing.getSomeProperty() ).toBe("aString");   // check that the thing is in the state you expected it to be
+    expect( thing.getSomeListProperty() ).toContain("SomeValue");  // you can check inside lists, too
+    
+});
+
+
+
+```
 
 
 ## Javascript crib sheet
