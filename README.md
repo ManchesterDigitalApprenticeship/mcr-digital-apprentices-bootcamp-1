@@ -1,6 +1,6 @@
 # Manchester Digital Apprenticeship Bootcamp One
 
-## Kata One, shopping cart 
+## Kata Three, shopping cart 
 
 Throughout the bootcamp we'll be using a single kata 'the shopping cart' to learn more about pairing, testing and 
 writing user stories. 
